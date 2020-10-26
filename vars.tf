@@ -1,9 +1,9 @@
 variable "okta_group_name"{
-  default = ""
+  default = "hap"
   }
 
 variable "okta_group_description"{
-  default = ""
+  default = "this is hap group"
   }
 variable "okta_api_token" {
   default =  "00oN74cr8Nl72ci3zu16IGVSn_cMPENQDr3y0y-Kf5"
