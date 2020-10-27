@@ -1,8 +1,17 @@
  pipeline {
-
-  agent any
- 
-  stages {
+    agent any
+    options {
+        skipDefaultCheckout true
+    }
+    environment {
+       TF_VAR_okta_group_name="${group_name}"
+       TF_VAR_group_description="${group_description}"
+    }
+	 parameters {
+        string(name: 'GROUP_NAME', defaultValue: 'blackpanther', description: 'vcenter data center',)
+        string(name: 'GROUP_DESCRIPTION', defaultValue: 'avengers', description: 'data center cluster',)
+    }    
+	stages {
 
     stage('TF Plan') {
       steps {
@@ -10,7 +19,6 @@
           sh """
           export TF_VAR_okta_group_name=${params.groupname}
           export TF_VAR_group_description=${params.description}
-
           terraform plan -out myplan
           """
         }
@@ -36,5 +44,4 @@
         }
       }
   }
-
-}
+  }
