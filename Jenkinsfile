@@ -7,11 +7,11 @@
        TF_VAR_okta_group_name="${group_name}"
        TF_VAR_group_description="${group_description}"
     }
-	 parameters {
+    parameters {
         string(name: 'GROUP_NAME', defaultValue: 'blackpanther', description: 'vcenter data center',)
         string(name: 'GROUP_DESCRIPTION', defaultValue: 'avengers', description: 'data center cluster',)
     }    
-	stages {
+    stages {
 
     stage('TF Plan') {
       steps {
