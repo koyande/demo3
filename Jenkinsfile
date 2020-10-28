@@ -4,12 +4,12 @@
         skipDefaultCheckout true
     }
   environment {
-       TF_VAR_okta_group_name="${group_name}"
-       TF_VAR_group_description="${group_description}"
+       TF_VAR_okta_group_name="${GROUP_NAME}"
+       TF_VAR_group_description="${GROUP_DESCRIPTION}"
     }
   parameters {
-        string(name: 'GROUP_NAME', defaultValue: 'blackpanther', description: 'Group Name for OKTA',)
-        string(name: 'GROUP_DESCRIPTION', defaultValue: 'avengers', description: 'Description for Group',)
+        string(name: 'GROUP_NAME', defaultValue: 'BlackPanther', description: 'Group Name',)
+        string(name: 'GROUP_DESCRIPTION', defaultValue: 'Avengers', description: 'Description for Group',)
     }    
   stages {
 
@@ -17,8 +17,8 @@
       steps {
           sh 'terraform init'
           sh """
-          export TF_VAR_okta_group_name=${params.group_name}
-          export TF_VAR_group_description=${params.group_description}
+          export TF_VAR_okta_group_name=${params.GROUP_NAME}
+          export TF_VAR_group_description=${params.GROUP_DESCRIPTION}
   
           terraform plan -out myplan
           """
