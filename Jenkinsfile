@@ -37,8 +37,8 @@
     stage('TF Apply') {
       steps {
           sh """
-          export TF_VAR_okta_group_name=${params.groupname}
-          export TF_VAR_group_description=${params.description}
+          export TF_VAR_okta_group_name=${params.GROUP_NAME}
+          export TF_VAR_group_description=${params.GROUP_DESCRIPTION}
           
           terraform apply -input=false -auto-approve myplan 
           """
