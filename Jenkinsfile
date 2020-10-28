@@ -17,8 +17,8 @@
       steps {
           sh 'terraform init'
           sh """
-          export TF_VAR_okta_group_name=${params.groupname}
-          export TF_VAR_group_description=${params.description}
+          export TF_VAR_okta_group_name=${params.group_name}
+          export TF_VAR_group_description=${params.group_description}
           terraform plan -out myplan
           """
         }
