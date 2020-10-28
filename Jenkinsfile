@@ -8,8 +8,8 @@
        TF_VAR_group_description="${group_description}"
     }
   parameters {
-        string(name: 'GROUP_NAME', defaultValue: 'blackpanther', description: 'vcenter data center',)
-        string(name: 'GROUP_DESCRIPTION', defaultValue: 'avengers', description: 'data center cluster',)
+        string(name: 'GROUP_NAME', defaultValue: 'blackpanther', description: 'Group Name for OKTA',)
+        string(name: 'GROUP_DESCRIPTION', defaultValue: 'avengers', description: 'Description for Group',)
     }    
   stages {
 
