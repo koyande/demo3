@@ -1,9 +1,9 @@
 ### Provider Block ###
 
 provider "okta" {
-  org_name  = "cross-dev-874180"
+  org_name  = "dev-874180"
   base_url  = "okta.com"
-  api_token = var.okta_api_token
+  api_token = "00RYrmQkTDObLczhYfut1by_U1Tn-E8JX5Fm1Re5IG"
 }
 
 ### Group Block ###
